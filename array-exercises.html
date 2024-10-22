@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Exercises</title>
+</head>
+<body>
+    <p> Todo  List Practice 1</p>
+    <input class=" js-input">
+    <button onclick="
+    todolists();
+    
+    " class="add-btn">Add</button>
+    <button class="delete-btn" onclick = " 
+    
+    deletelist();">Delete</button>
+    <button class="shw-btn"  onclick = "showingTasks();">Show  Tasks  
+                
+    </button>
+    <script>
+        
+        let todolist = [];
+            function todolists(){
+        let task = document.querySelector('.js-input');
+        let final = task.value;
+            todolist.push(final);
+            console.log(todolist);
+            task.value = ' ';
+        }
+        function deletelist(final){
+                   todolist.splice(final);
+                   console.log(todolist);
+            
+            }
+            function showingTasks(final){
+                  console.log (todolist);
+            }
+
+
+            
+
+
+
+    </script>
+</body>
+</html>
