@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo App</title>
+</head>
+<body>
+
+<script>
+  let lists = [];
+
+  function todoapp() {
+    let ask = Number(prompt(`
+Choose an option:
+1. Add task
+2. View tasks
+3. Delete last task
+4. Mark task as done (not implemented)
+5. Exit`));
+
+    if (ask === 1) {
+      let task = prompt("Enter task:");
+      lists.push(task);
+      console.log("✅ Task added.");
+    } else if (ask === 2) {
+      if (lists.length === 0) {
+        console.log("📭 No tasks found.");
+      } else {
+        console.log("📝 Your tasks:");
+        lists.forEach((task, i) => {
+          console.log(`${i + 1}. ${task}`);
+        });
+      }
+    } else if (ask === 3) {
+      if (lists.length === 0) {
+        console.log("❌ No tasks to delete.");
+      } else {
+        let removed = lists.pop();
+        console.log(`🗑️ Removed task: ${removed}`);
+      }
+    } else if (ask === 5) {
+      console.log("👋 Exiting...");
+      return;
+    } else {
+      console.log("⚠️ Invalid choice");
+    }
+
+    todoapp(); // repeat
+  }
+
+  todoapp();
+</script>
+
+</body>
+</html>
